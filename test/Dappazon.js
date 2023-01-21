@@ -6,7 +6,10 @@ const tokens = (n) => {
 
 describe("Dappazon", () => {
   let dappazon;
+  let deployer, buyer;
   beforeEach(async () => {
+    [deployer, buyer] = await ethers.getSigners();
+    console.log(deployer.address, buyer.address);
     const Dappazon = await ethers.getContractFactory("Dappazon");
     dappazon = await Dappazon.deploy();
   });
