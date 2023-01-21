@@ -5,9 +5,14 @@ const tokens = (n) => {
 };
 
 describe("Dappazon", () => {
-  it("has a name", async () => {
+  let dappazon;
+  beforeEach(async () => {
     const Dappazon = await ethers.getContractFactory("Dappazon");
     dappazon = await Dappazon.deploy();
-    expect(await dappazon.name()).to.equal("Dappazon");
+  });
+  describe("Deployment", () => {
+    it("has a name", async () => {
+      expect(await dappazon.name()).to.equal("Dappazon");
+    });
   });
 });
