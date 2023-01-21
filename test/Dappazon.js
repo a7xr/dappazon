@@ -19,4 +19,18 @@ describe("Dappazon", () => {
       expect(await dappazon.owner()).to.equal(deployer.address);
     });
   });
+
+  describe("Listing", () => {
+    let transaction;
+    beforeEach(async () => {
+      transaction = await dappazon
+        .connect(deployer)
+        .list(1, "NAME001", "CATEGORY001", "IMAGE001", 1, 4, 5);
+      await transaction.wait();
+    });
+    it("Returns item attributes", async () => {
+      const item = await dappazon.items(1);
+      expect(item.id).to.equal(1);
+    });
+  });
 });
