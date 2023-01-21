@@ -7,6 +7,9 @@ import Rating from "./Rating";
 import close from "../assets/close.svg";
 
 const Product = ({ item, provider, account, dappazon, togglePop }) => {
+  const buyHandler = async () => {
+    console.log("Clicked buyhandler function ");
+  };
   return (
     <div className="product">
       <div className="product__details">
@@ -51,7 +54,22 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
           </p>
 
           {item.stock > 0 ? <p>In Stock.</p> : <p>Out of Stock.</p>}
+
+          <button className="product__buy" onClick={buyHandler}>
+            Buy Now
+          </button>
+
+          <p>
+            <small>Ships from</small> Dappazon
+          </p>
+          <p>
+            <small>Sold by</small> Dappazon
+          </p>
         </div>
+
+        <button onClick={togglePop} className="product__close">
+          <img src={close} alt="Close" />
+        </button>
       </div>
     </div>
   );
