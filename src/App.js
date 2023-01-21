@@ -24,7 +24,6 @@ function App() {
     setProvider(provider);
 
     const network = await provider.getNetwork();
-    console.log(network);
 
     // Connect to Smart Contracts
     const dappazon = new ethers.Contract(
@@ -41,7 +40,9 @@ function App() {
       const item = await dappazon.items(i + 1);
       items.push(item);
     }
-    console.log(items)
+    // console.log(items);
+    const electronics = items.filter((item) => item.category === "electronics");
+    console.log(electronics);
   };
   useEffect(() => {
     loadBlockchainData();
