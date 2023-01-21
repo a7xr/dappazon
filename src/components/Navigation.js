@@ -12,6 +12,18 @@ const Navigation = ({ account, setAccount }) => {
       <button type="button" className="nav__connect">
         {account.slice(0, 6) + "..." + account.slice(38, 42)}
       </button>
+
+      <ul className="nav__links">
+        <li>
+          <a href="#Clothing & Jewelry">Clothing & Jewelry</a>
+        </li>
+        <li>
+          <a href="#Electronics & Gadgets">Electronics & Gadgets</a>
+        </li>
+        <li>
+          <a href="#Toys & Gaming">Toys & Gaming</a>
+        </li>
+      </ul>
     </nav>
   );
 };
