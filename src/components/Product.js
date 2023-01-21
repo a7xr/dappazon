@@ -49,6 +49,8 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
               })}
             </strong>
           </p>
+
+          {item.stock > 0 ? <p>In Stock.</p> : <p>Out of Stock.</p>}
         </div>
       </div>
     </div>
