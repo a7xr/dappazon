@@ -72,5 +72,10 @@ describe("Dappazon", () => {
       const result = await ethers.provider.getBalance(dappazon.address);
       expect(result).to.equal(COST);
     });
+
+    it("Updates buyer's order count", async () => {
+      const result = await dappazon.orderCount(buyer.address);
+      expect(result).to.equal(1);
+    });
   });
 });
