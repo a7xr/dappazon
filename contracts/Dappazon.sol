@@ -44,6 +44,7 @@ contract Dappazon {
         items[_id] = item;
 
         // Add Item to mapping
+        items[_id] = item;
 
         // Emit event
     }
