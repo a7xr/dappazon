@@ -22,6 +22,14 @@ function App() {
   const [clothing, setClothing] = useState(null);
   const [toys, setToys] = useState(null);
 
+  const [item, setItem] = useState({});
+  const [toggle, setToggle] = useState(false);
+
+  const togglePop = (item) => {
+    setItem(item);
+    toggle ? setToggle(false) : setToggle(true);
+  };
+
   const loadBlockchainData = async () => {
     // Connect to Blockchain
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -61,6 +69,22 @@ function App() {
     <div>
       <Navigation account={account} setAccount={setAccount} />
       <h2>Welcome to Dappazon !</h2>
+      {electronics && clothing && toys && (
+        <>
+          <Section
+            title={"Clothing & Jewelry"}
+            items={clothing}
+            togglePop={togglePop}
+          />
+          <Section
+            title={"Electronics & Gadgets"}
+            items={electronics}
+            togglePop={togglePop}
+          />
+          <Section title={"Toys & Gaming"} items={toys} togglePop={togglePop} />
+        </>
+      )}
+      <p></p>
     </div>
   );
 }
