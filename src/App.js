@@ -35,6 +35,13 @@ function App() {
     setDappazon(dappazon);
 
     // Load products
+    const items = [];
+
+    for (var i = 0; i < 9; i++) {
+      const item = await dappazon.items(i + 1);
+      items.push(item);
+    }
+    console.log(items)
   };
   useEffect(() => {
     loadBlockchainData();
