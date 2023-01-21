@@ -18,6 +18,11 @@ contract Dappazon {
 
     mapping(uint256 => Item) public items;
 
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
     constructor() {
         owner = msg.sender;
     }
@@ -31,7 +36,7 @@ contract Dappazon {
         uint256 _cost,
         uint256 _rating,
         uint256 _stock
-    ) public {
+    ) public onlyOwner {
         // Create Item
         Item memory item = Item(
             _id,
