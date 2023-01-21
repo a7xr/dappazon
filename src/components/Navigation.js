@@ -9,7 +9,9 @@ const Navigation = ({ account, setAccount }) => {
 
       <input type="text" className="nav__search" />
 
-      <button type="button" className="nav__connect">{account}</button>
+      <button type="button" className="nav__connect">
+        {account.slice(0, 6) + "..." + account.slice(38, 42)}
+      </button>
     </nav>
   );
 };
