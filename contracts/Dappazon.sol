@@ -14,6 +14,8 @@ contract Dappazon {
         uint256 stock;
     }
 
+    event List(string name, uint256 cost, uint256 quantity);
+
     mapping(uint256 => Item) public items;
 
     constructor() {
@@ -47,6 +49,7 @@ contract Dappazon {
         items[_id] = item;
 
         // Emit event
+        emit List(_name, _cost, _stock);
     }
 
     // Buy products
