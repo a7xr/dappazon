@@ -27,7 +27,13 @@ contract Dappazon {
         uint256 _cost,
         uint256 _rating,
         uint256 _stock
-    ) public {}
+    ) public {
+        // Create Item
+        
+        // Add Item to mapping
+        
+        // Emit event
+    }
 
     // Buy products
 
