@@ -18,13 +18,17 @@ function App() {
 
   const [dappazon, setDappazon] = useState(null);
 
+  const [electronics, setElectronics] = useState(null);
+  const [clothing, setClothing] = useState(null);
+  const [toys, setToys] = useState(null);
+
   const loadBlockchainData = async () => {
     // Connect to Blockchain
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     setProvider(provider);
 
     const network = await provider.getNetwork();
-
+    console.log(network);
     // Connect to Smart Contracts
     const dappazon = new ethers.Contract(
       config[network.chainId].dappazon.address,
@@ -42,7 +46,12 @@ function App() {
     }
     // console.log(items);
     const electronics = items.filter((item) => item.category === "electronics");
-    console.log(electronics);
+    const clothing = items.filter((item) => item.category === "clothing");
+    const toys = items.filter((item) => item.category === "toys");
+
+    setElectronics(electronics);
+    setClothing(clothing);
+    setToys(toys);
   };
   useEffect(() => {
     loadBlockchainData();
