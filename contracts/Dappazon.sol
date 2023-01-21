@@ -58,6 +58,15 @@ contract Dappazon {
     }
 
     // Buy products
+    function buy(uint256 _id) public payable {
+        // Receive Crypto
+
+        // Create an order
+
+        // Substract stock
+
+        // Emit event
+    }
 
     // Withdraw funds
 }
