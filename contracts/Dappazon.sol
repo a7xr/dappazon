@@ -70,6 +70,12 @@ contract Dappazon {
         // Fetch item
         Item memory item = items[_id];
 
+        // Require enough ether to buy item
+        require(msg.value >= item.cost);
+
+        // Require item is in stock
+        require(item.stock > 0);
+
         // Create an order
         Order memory order = Order(block.timestamp, item);
 
