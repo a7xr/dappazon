@@ -9,11 +9,16 @@ describe("Dappazon", () => {
   let deployer, buyer;
   beforeEach(async () => {
     [deployer, buyer] = await ethers.getSigners();
-    console.log(deployer.address, buyer.address);
+
     const Dappazon = await ethers.getContractFactory("Dappazon");
     dappazon = await Dappazon.deploy();
   });
+
   describe("Deployment", () => {
+    it("Sets the owner", async () => {
+      expect(await dappazon.owner()).to.equal(deployer.address);
+    });
+
     it("has a name", async () => {
       expect(await dappazon.name()).to.equal("Dappazon");
     });
