@@ -25,6 +25,16 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
           <h2>{ethers.utils.formatUnits(item.cost.toString(), "ether")} ETH</h2>
 
           <hr />
+
+          <h2>Overview</h2>
+
+          <p>
+            {item.description}
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima rem,
+            iusto, consectetur inventore quod soluta quos qui assumenda aperiam,
+            eveniet doloribus commodi error modi eaque! Iure repudiandae
+            temporibus ex? Optio!
+          </p>
         </div>
       </div>
     </div>
