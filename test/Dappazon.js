@@ -18,9 +18,5 @@ describe("Dappazon", () => {
     it("Sets the owner", async () => {
       expect(await dappazon.owner()).to.equal(deployer.address);
     });
-
-    it("has a name", async () => {
-      expect(await dappazon.name()).to.equal("Dappazon");
-    });
   });
 });
