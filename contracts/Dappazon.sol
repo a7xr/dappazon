@@ -19,6 +19,7 @@ contract Dappazon {
         Item item;
     }
 
+    event Buy(address buyer, uint256 orderId, uint256 itemId);
     event List(string name, uint256 cost, uint256 quantity);
 
     mapping(uint256 => Item) public items;
@@ -80,6 +81,7 @@ contract Dappazon {
         items[_id].stock = item.stock - 1;
 
         // Emit event
+        emit Buy(msg.sender, orderCount[msg.sender], item.id);
     }
 
     // Withdraw funds
