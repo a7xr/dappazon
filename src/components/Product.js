@@ -36,6 +36,20 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
             temporibus ex? Optio!
           </p>
         </div>
+        <div className="product__order">
+          <h1>{ethers.utils.formatUnits(item.cost.toString(), "ether")} ETH</h1>
+
+          <p>
+            FREE delivery <br />
+            <strong>
+              {new Date(Date.now() + 345600000).toLocaleDateString(undefined, {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+              })}
+            </strong>
+          </p>
+        </div>
       </div>
     </div>
   );
