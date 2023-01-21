@@ -7,4 +7,10 @@ contract Dappazon {
     constructor() {
         owner = msg.sender;
     }
+
+    // List products
+
+    // Buy products
+
+    // Withdraw funds
 }
