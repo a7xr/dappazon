@@ -15,7 +15,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cc": "yarn hardhat clean; yarn hardhat compile --verbose",
+    "ht": "yarn hardhat test",
+    "rsl": "yarn hardhat run scripts/deploy.js --network localhost",
+    "nrs": "npm run start",
+    "hn": "yarn hardhat node"
   },
   "eslintConfig": {
     "extends": [
