@@ -16,6 +16,8 @@ function App() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
 
+  const [dappazon, setDappazon] = useState(null);
+
   const loadBlockchainData = async () => {
     // Connect to Blockchain
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -30,6 +32,7 @@ function App() {
       Dappazon,
       provider
     );
+    setDappazon(dappazon);
 
     // Load products
   };
